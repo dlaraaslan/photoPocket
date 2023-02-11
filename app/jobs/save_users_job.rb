@@ -34,6 +34,11 @@ class SaveUsersJob < ApplicationJob
         end
       end
 
+      User.all.each do |user|
+        user.pic_url = "https://picsum.photos/id/" +  user.id.to_s  + "/5000/3333" 
+        user.save
+      end
+
       # @sprint.scraps.new gibi bişey olabilir mi
       # userın adresleri var companyleri var
       # @company = User.companies.new gibi
