@@ -14,7 +14,7 @@
                             </svg>
                         <% end %>
                     </div>
-                    
+
                     <div class="box box-info">
                     <div class="box-body">
                         <div  align="center"> <img alt="User Pic" src= <%= @user.pic_url %>  id="profile-image1" class="img-circle img-responsive " style="width:200px;height: 200px">                     
@@ -56,13 +56,19 @@
                 <div class="d-flex border-end-0 bg-white border rounded-pill ">
                     <div class="card">
                         <a href= <%= Photo.all.where(album_id: album.id)[0].thumbnail_url %> >
-                        <img src= <%= Photo.all.where(album_id: album.id)[0].thumbnail_url %> alt="Lights" style="width:100%; left: 30px;" >
+                        <img 
+                            src= <%= Photo.all.where(album_id: album.id)[0].thumbnail_url %> 
+                            alt="Lights" 
+                            style="width:100%; left: 30px;" 
+                            alt="View of the City in the Mountains"
+                            >
                         </a>
                     </div>
+                    
                     <div class="col-md-6 align-self-center">
+
                         <p><%= album.title.titleize %></p>
                     </div>
-                    
                 </div>
             </br>
         <% end %>
