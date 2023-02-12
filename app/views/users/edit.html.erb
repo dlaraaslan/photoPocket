@@ -1,0 +1,60 @@
+
+
+<html>
+<head>
+    <style type="text/css">
+    .container {
+        width: 500px;
+        clear: both;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+    }
+
+    </style>
+</head>
+<body>
+<%= form_with model: @user do |f| %>
+    <div align="center" class= "container"> 
+        <h4> Kullanıcı Düzenle </h4>
+        <% if @user.errors.any? %>
+          <% @user.errors.full_messages.each do |message| %> 
+            <p> <%= message %> </p>
+          <% end %>
+        <% end %>
+        
+        <div>
+            <%= f.label :name %>
+            <%= f.text_field :name%>
+        </div>
+        <div>
+            <%= f.label :username %>
+            <%= f.text_field :username %> 
+        </div>
+        <div>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+        </div>
+        <div>
+            <%= f.label :phone %>
+            <%= f.telephone_field :phone %>
+        </div>
+        <div>
+            <%= f.label :address %>
+            <%= f.text_field :address %>
+        </div>
+        <div>
+            <%= f.label :photo %>
+            <%= f.text_field :pic_url %>
+        </div>
+        <br>
+        <div>
+            <%= f.submit "Kaydet" %>
+        </div>
+
+    </div>
+<% end %>
+
+
+

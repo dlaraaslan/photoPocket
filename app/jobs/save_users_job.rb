@@ -39,10 +39,7 @@ class SaveUsersJob < ApplicationJob
         user.save
       end
 
-      # @sprint.scraps.new gibi bişey olabilir mi
-      # userın adresleri var companyleri var
-      # @company = User.companies.new gibi
-    
+      
     end
   end
 end
